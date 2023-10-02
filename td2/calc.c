@@ -27,4 +27,6 @@ int main() {
 
         printf("= %.3f\n", res);
     }
+
+    return 0;
 }

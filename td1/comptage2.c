@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 #define UPPER_LIMIT 26
 #define LOWER_LIMIT 52
@@ -8,6 +9,8 @@
 int main() {
     int c;
     int counter[LIMIT];
+
+    memset(counter, 0, LIMIT * sizeof(int));
 
     for (int i = 0; i < LIMIT; i++) {
         counter[i] = 0;
