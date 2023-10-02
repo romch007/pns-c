@@ -2,13 +2,13 @@
 
 int main() {
     int i = 0;
-    char* line;
-    size_t read = 0;
+    int c;
 
-    while (getline(&line, &read, stdin) != -1) {
-        i++;
-        printf("%d: %s", i, line);
+    while ((c = getchar()) != EOF) {
+        if (c == '\n') i++;
     }
+
+    printf("nombre de lignes: %d\n", i);
 
     return 0;
 }
