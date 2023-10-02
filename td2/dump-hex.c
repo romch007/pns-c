@@ -9,8 +9,9 @@ int main() {
 
     while ((c = getchar()) != EOF) {
         buffer[cursor] = c;
+        cursor++;
 
-        if (cursor == 15) {
+        if (cursor == LINE_SIZE) {
 
             // print hex
             for (int i = 0; i < LINE_SIZE; i++) {
@@ -31,6 +32,5 @@ int main() {
             printf("%s", "\n");
         }
 
-        cursor++;
     }
 }
