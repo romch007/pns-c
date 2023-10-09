@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void insertion(int* arr, size_t len, int v) {
+void insertion(int *arr, size_t len, int v) {
     size_t index = 0;
 
     for (size_t i = 0; i < len - 1; i++) {
@@ -21,9 +21,7 @@ void insertion(int* arr, size_t len, int v) {
 #define ARR_SIZE 10
 
 int main() {
-    int arr[ARR_SIZE];
-
-    memset(arr, 0, ARR_SIZE * sizeof(int));
+    int arr[ARR_SIZE] = {0};
 
     arr[0] = 1;
     arr[1] = 5;
