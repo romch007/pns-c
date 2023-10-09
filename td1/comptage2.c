@@ -8,9 +8,7 @@
 
 int main() {
     int c;
-    int counter[LIMIT];
-
-    memset(counter, 0, LIMIT * sizeof(int));
+    int counter[LIMIT] = { 0 };
 
     for (int i = 0; i < LIMIT; i++) {
         counter[i] = 0;

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 #define LINE_SIZE 16
 
@@ -20,7 +21,7 @@ int main() {
 
             for (int i = 0; i < LINE_SIZE; i++) {
                 int a = buffer[i];
-                if (a == '\n') a = '.';
+                if (a == '\n' || !isascii(a)) a = '.';
                 printf("%c", a);
             }
 
