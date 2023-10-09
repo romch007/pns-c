@@ -12,15 +12,11 @@ int main() {
         cursor++;
 
         if (cursor == LINE_SIZE) {
-
-            // print hex
             for (int i = 0; i < LINE_SIZE; i++) {
                 printf("%02X ", buffer[i]);
             }
 
             printf("| ");
-
-            // print normal
 
             for (int i = 0; i < LINE_SIZE; i++) {
                 int a = buffer[i];
