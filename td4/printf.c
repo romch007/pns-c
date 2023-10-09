@@ -18,6 +18,11 @@ void printf_own(const char format[], ...) {
                 int v = va_arg(vars, int);
                 int digit;
 
+                if (v < 0) {
+                    putchar('-');
+                    v *= -1;
+                }
+
                 if (v == 0) {
                     putchar('0');
                 } else {
