@@ -14,7 +14,7 @@ int strcmp_own(char s1[], char s2[]) {
         c2 = *s2++;
 
         if (c1 == '\0')
-            return c1 - c1;
+            return c1 - c2;
     }  while (c1 == c2);
 
     return c1 - c2;

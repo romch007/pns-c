@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 ssize_t indice(const char str[], const char c) {
-    for (size_t i = 0; i < strlen(str); i++) {
+    for (ssize_t i = 0; str[i] != '\0'; i++) {
         if (str[i] == c) return i;
     }
 
