@@ -56,18 +56,17 @@ void printf_own(const char format[], ...) {
                 double val = va_arg(vars, double);
                 char buffer[64] = {0};
                 sprintf(buffer, "%f", val);
+                char* s = buffer;
 
-                for (size_t i = 0; i < strlen(buffer); i++) {
-                    putchar(buffer[i]);
-                }
+                while (*s)
+                    putchar(*s++);
             } else if (format[i + 1] == 'c') {
                 int c = va_arg(vars, int);
                 putchar(c);
             } else if (format[i + 1] == 's') {
                 char* str = va_arg(vars, char*);
-                for (size_t j = 0; j < strlen(str); j++)  {
-                    putchar(str[j]);
-                }
+                while (*str)
+                    putchar(*str++);
             } else if (format[i + 1] == '%') {
                 putchar('%');
             } else {
