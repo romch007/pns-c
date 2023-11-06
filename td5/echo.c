@@ -1,6 +1,6 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 int main(int argc, char** argv) {
     if (argc < 2) {
@@ -8,26 +8,22 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    int reversed = strcmp(argv[1], "-r") == 0;
+    bool reversed = strcmp(argv[1], "-r") == 0;
+    int start_index = reversed ? 2 : 1;
+    int str_count = 0;
 
-    int str_count = argc - reversed - 1;
-    char** strs = malloc(sizeof(char*) * str_count);
-
-    for (int i = 0; i < str_count; i++) {
-        strs[i] = argv[i + reversed + 1];
+    for (int i = start_index; i < argc; i++) {
+        if (!reversed)
+            printf("%s ", argv[i]);
+        str_count++;
     }
 
     if (reversed) {
-        for (int i = str_count - 1; i >= 0; i--)  {
-            printf("%s ", strs[i]);
-        }
-    } else {
-        for (int i = 0; i < str_count; i++)  {
-            printf("%s ", strs[i]);
+        for (int j = str_count; j-- > 0;) {
+            printf("%s ", argv[start_index + j]);
         }
     }
 
     printf("\n");
-    free(strs);
     return 0;
 }
