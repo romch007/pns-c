@@ -9,9 +9,9 @@ struct node {
 
 typedef struct node *tree;
 
-tree create_empty_tree(void) {
-    tree t = malloc(sizeof(tree));
-    t->value = 0;
+tree create_empty_tree(int initial_value) {
+    tree t = malloc(sizeof(struct node));
+    t->value = initial_value;
     t->left = NULL;
     t->right = NULL;
     return t;
@@ -19,8 +19,7 @@ tree create_empty_tree(void) {
 
 tree add_tree(tree t, int v) {
    if (t == NULL) {
-       tree new_tree = create_empty_tree();
-       new_tree->value = v;
+       tree new_tree = create_empty_tree(v);
        return new_tree;
    } else if (v <= t->value) {
        t->left = add_tree(t->left, v);
@@ -32,7 +31,6 @@ tree add_tree(tree t, int v) {
 }
 
 void print_tree(tree t) {
-
     if (t->left != NULL)
         print_tree(t->left);
 
@@ -43,13 +41,13 @@ void print_tree(tree t) {
 }
 
 tree find_tree(tree t, int v) {
-    if (t->value == v) {
+    if (t == NULL) {
+        return NULL;
+    } else if (t->value == v) {
         return t;
-    } else if (t->value < v) {
-        if (t->left == NULL) return NULL;
+    } else if (t->value > v) {
         return find_tree(t->left, v);
     } else {
-        if (t->right == NULL) return NULL;
         return find_tree(t->right, v);
     }
 }
@@ -65,9 +63,8 @@ void free_tree(tree t) {
 }
 
 int main() {
-    tree t = create_empty_tree();
+    tree t = create_empty_tree(8);
 
-    t = add_tree(t, 8);
     t = add_tree(t, 3);
     t = add_tree(t, 10);
     t = add_tree(t, 1);
