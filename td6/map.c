@@ -1,4 +1,3 @@
-#include <stddef.h>
 #include <stdio.h>
 
 void map(int (*fn)(int), int arr[], size_t len) {
