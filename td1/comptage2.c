@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
 #include <string.h>
 
 #define UPPER_LIMIT 26
@@ -8,7 +8,7 @@
 
 int main() {
     int c;
-    int counter[LIMIT] = { 0 };
+    int counter[LIMIT] = {0};
 
     for (int i = 0; i < LIMIT; i++) {
         counter[i] = 0;

@@ -1,14 +1,14 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
     bool option_n = false;
     bool option_E = false;
     bool option_h = false;
 
     for (int i = 1; i < argc; i++) {
-        char *opt = argv[i];
+        char* opt = argv[i];
 
         if (opt[0] == '-') {
             if (opt[1] == '-') {

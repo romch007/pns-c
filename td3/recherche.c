@@ -1,5 +1,5 @@
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 ssize_t indice(const char str[], const char c) {
     for (ssize_t i = 0; str[i] != '\0'; i++) {
@@ -25,7 +25,7 @@ int main() {
     printf("%zd\n", indice_droite("Test", 'T'));
     printf("%zd\n", indice_droite("Test", 't'));
     printf("%zd\n", indice_droite("Test", 'z'));
-    printf("%zd\n", indice_droite("Tester", 'e') );
+    printf("%zd\n", indice_droite("Tester", 'e'));
 
     return 0;
 }

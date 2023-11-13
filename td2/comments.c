@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 int main() {
     int c;
@@ -15,7 +15,8 @@ int main() {
             if (c == '/' && !in_comment && getchar() == '*') {
                 in_comment = true;
                 continue;
-            } if (c == '*' && in_comment && getchar() == '/') {
+            }
+            if (c == '*' && in_comment && getchar() == '/') {
                 in_comment = false;
                 continue;
             }

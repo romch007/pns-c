@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 int evaluer(char operateur, int operande, ...) {
     va_list nbs;

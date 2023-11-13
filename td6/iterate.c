@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int iterate(int(*fn)(int, int), int tab[], size_t len) {
+int iterate(int (*fn)(int, int), int tab[], size_t len) {
     int val = tab[0];
 
     for (size_t i = 1; i < len; i++) {

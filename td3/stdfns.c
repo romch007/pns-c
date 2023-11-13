@@ -1,8 +1,9 @@
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 void strcpy_own(char s1[], char s2[]) {
-    while ((*s1++ = *s2++));
+    while ((*s1++ = *s2++))
+        ;
 }
 
 int strcmp_own(char s1[], char s2[]) {
@@ -15,7 +16,7 @@ int strcmp_own(char s1[], char s2[]) {
 
         if (c1 == '\0')
             return c1 - c2;
-    }  while (c1 == c2);
+    } while (c1 == c2);
 
     return c1 - c2;
 }

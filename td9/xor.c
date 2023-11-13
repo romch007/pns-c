@@ -1,6 +1,6 @@
-#include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 char* xorcrypt(const char* msg, const char* key) {
     size_t msg_len = strlen(msg);

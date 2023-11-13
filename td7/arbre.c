@@ -1,13 +1,13 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 struct node {
     int value;
-    struct node *left;
-    struct node *right;
+    struct node* left;
+    struct node* right;
 };
 
-typedef struct node *tree;
+typedef struct node* tree;
 
 tree create_empty_tree(int initial_value) {
     tree t = malloc(sizeof(struct node));
@@ -18,16 +18,16 @@ tree create_empty_tree(int initial_value) {
 }
 
 tree add_tree(tree t, int v) {
-   if (t == NULL) {
-       tree new_tree = create_empty_tree(v);
-       return new_tree;
-   } else if (v <= t->value) {
-       t->left = add_tree(t->left, v);
-   } else if (v > t->value) {
-       t->right = add_tree(t->right, v);
-   }
+    if (t == NULL) {
+        tree new_tree = create_empty_tree(v);
+        return new_tree;
+    } else if (v <= t->value) {
+        t->left = add_tree(t->left, v);
+    } else if (v > t->value) {
+        t->right = add_tree(t->right, v);
+    }
 
-   return t;
+    return t;
 }
 
 void print_tree(tree t) {

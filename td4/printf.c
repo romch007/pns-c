@@ -1,7 +1,7 @@
-#include <string.h>
 #include <math.h>
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
+#include <string.h>
 
 double log16(double x) {
     return log(x) / log(16);
@@ -84,7 +84,7 @@ void printf_own(const char format[], ...) {
 
 int main() {
     printf_own("DEBUT\n%s%c c'est moi.\nTest nombres: 0x%x et %d et un négatif %d\n",
-          "salut", ',', 161, 123, -12);
+               "salut", ',', 161, 123, -12);
     printf_own("Trois nombres sur la même ligne: %d %f %d\n", 1, 2.0, 3);
     printf_own("Affichage d'un '%c' et encore un d'une autre façon '%%'\n", '%');
     printf_own("Affichage d'un %% non suivi d'un caractère spécial ==> %z...\n");

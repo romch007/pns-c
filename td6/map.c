@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-void map(int(*fn)(int), int arr[], size_t len) {
+void map(int (*fn)(int), int arr[], size_t len) {
     for (size_t i = 0; i < len; i++) {
         arr[i] = fn(arr[i]);
     }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char *strtok_own(char *s, const char *delim) {
+char* strtok_own(char* s, const char* delim) {
     static char* rest;
     if (s == NULL) s = rest;
     if (strlen(s) == 0) return NULL;
@@ -21,4 +21,3 @@ int main(void) {
         printf("mot '%s'\n", p);
     return 0;
 }
-

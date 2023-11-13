@@ -1,5 +1,5 @@
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 void suppress_char(char str[], char c) {
     size_t len = strlen(str);

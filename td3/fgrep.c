@@ -1,5 +1,5 @@
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 int strstr_own(char a[], char b[]) {
     size_t len_a = strlen(a);
@@ -17,7 +17,7 @@ int strstr_own(char a[], char b[]) {
 }
 
 int main(int argc, char** argv) {
-    if (argc < 2)  {
+    if (argc < 2) {
         printf("invalid arguments");
         return 1;
     }

@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
 double celsius_to_fahrenheit(double c) {
     return ((9 * c) / 5) + 32;

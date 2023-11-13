@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void insertion(int *arr, size_t len, int v) {
+void insertion(int* arr, size_t len, int v) {
     size_t index = 0;
 
     for (size_t i = 0; i < len - 1; i++) {

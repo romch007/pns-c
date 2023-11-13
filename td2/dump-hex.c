@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
 
 #define LINE_SIZE 16
 
@@ -28,6 +28,5 @@ int main() {
             cursor = 0;
             printf("%s", "\n");
         }
-
     }
 }

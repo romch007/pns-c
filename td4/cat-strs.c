@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 void cat_strings(char str1[], ...) {
     va_list strs;

@@ -56,8 +56,11 @@ int main() {
     for (int i = 0; i < 140; i += 9) bigset_add(e1, i);
 
     bigset_inter(e1, e2, e3);
-    printf("e1 = "); bigset_print(e1);
-    printf("e2 = "); bigset_print(e2);
-    printf("e3 = "); bigset_print(e3);
+    printf("e1 = ");
+    bigset_print(e1);
+    printf("e2 = ");
+    bigset_print(e2);
+    printf("e3 = ");
+    bigset_print(e3);
     return 0;
 }
