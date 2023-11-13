@@ -16,15 +16,13 @@ int main(int argc, char** argv) {
                     option_h = true;
                 }
             } else {
-                opt += 1;
+                ++opt;
                 while (*opt != '\0') {
-                    char c = *opt;
+                    char c = *opt++;
 
-                    option_n = c == 'n' || option_n;
-                    option_E = c == 'E' || option_E;
-                    option_h = c == 'h' || option_h;
-
-                    opt++;
+                    option_n = (c == 'n') || option_n;
+                    option_E = (c == 'E') || option_E;
+                    option_h = (c == 'h') || option_h;
                 }
             }
         }
