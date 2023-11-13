@@ -6,7 +6,7 @@
 #define OPTION_h 1 << 3
 
 int main(int argc, char** argv) {
-    int flags = 0;
+    unsigned char flags = 0;
 
     for (int i = 1; i < argc; i++) {
         char* opt = argv[i];
