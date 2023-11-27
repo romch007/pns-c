@@ -7,17 +7,17 @@ struct node {
     struct node* right;
 };
 
-struct node* create_empty_tree(int initial_value) {
-    struct node* t = malloc(sizeof(struct node));
-    t->value = initial_value;
-    t->left = NULL;
-    t->right = NULL;
-    return t;
+struct node* create_empty_tree() {
+    return NULL;
 }
 
 struct node* add_tree(struct node* t, int v) {
     if (t == NULL) {
-        return create_empty_tree(v);
+        struct node* new_t = malloc(sizeof(struct node));
+        new_t->value = v;
+        new_t->left = NULL;
+        new_t->right = NULL;
+        return new_t;
     } else if (v <= t->value) {
         t->left = add_tree(t->left, v);
     } else if (v > t->value) {
@@ -60,8 +60,9 @@ void free_tree(struct node* t) {
 }
 
 int main() {
-    struct node* t = create_empty_tree(8);
+    struct node* t = create_empty_tree();
 
+    t = add_tree(t, 8);
     t = add_tree(t, 3);
     t = add_tree(t, 10);
     t = add_tree(t, 1);

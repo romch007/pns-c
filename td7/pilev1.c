@@ -65,6 +65,13 @@ void print_stack(struct element* head) {
     }
 }
 
+void free_stack(struct element* head) {
+    if (head->next != NULL)
+        free_stack(head->next);
+
+    free(head);
+}
+
 int main() {
     struct element* stack = NULL;
     stack = push_item(stack, 1);
@@ -79,6 +86,8 @@ int main() {
     stack = pop_item(stack);
 
     print_stack(stack);
+
+    free_stack(stack);
 
     return 0;
 }
