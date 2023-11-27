@@ -4,7 +4,7 @@
 char* strtok_own(char* s, const char* delim) {
     static char* rest;
     if (s == NULL) s = rest;
-    if (strlen(s) == 0) return NULL;
+    if (*s == '\0') return NULL;
 
     size_t start_len = strspn(s, delim);
     size_t end_len = strcspn(s, delim);
