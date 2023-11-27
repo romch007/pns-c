@@ -7,20 +7,17 @@ struct node {
     struct node* right;
 };
 
-typedef struct node* tree;
-
-tree create_empty_tree(int initial_value) {
-    tree t = malloc(sizeof(struct node));
+struct node* create_empty_tree(int initial_value) {
+    struct node* t = malloc(sizeof(struct node));
     t->value = initial_value;
     t->left = NULL;
     t->right = NULL;
     return t;
 }
 
-tree add_tree(tree t, int v) {
+struct node* add_tree(struct node* t, int v) {
     if (t == NULL) {
-        tree new_tree = create_empty_tree(v);
-        return new_tree;
+        return create_empty_tree(v);
     } else if (v <= t->value) {
         t->left = add_tree(t->left, v);
     } else if (v > t->value) {
@@ -30,7 +27,7 @@ tree add_tree(tree t, int v) {
     return t;
 }
 
-void print_tree(tree t) {
+void print_tree(struct node* t) {
     if (t->left != NULL)
         print_tree(t->left);
 
@@ -40,7 +37,7 @@ void print_tree(tree t) {
         print_tree(t->right);
 }
 
-tree find_tree(tree t, int v) {
+struct node* find_tree(struct node* t, int v) {
     if (t == NULL) {
         return NULL;
     } else if (t->value == v) {
@@ -52,7 +49,7 @@ tree find_tree(tree t, int v) {
     }
 }
 
-void free_tree(tree t) {
+void free_tree(struct node* t) {
     if (t->left != NULL)
         free_tree(t->left);
 
@@ -63,7 +60,7 @@ void free_tree(tree t) {
 }
 
 int main() {
-    tree t = create_empty_tree(8);
+    struct node* t = create_empty_tree(8);
 
     t = add_tree(t, 3);
     t = add_tree(t, 10);

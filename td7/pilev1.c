@@ -6,32 +6,30 @@ struct element {
     struct element* next;
 };
 
-typedef struct element Element;
-
-Element* push_item(Element* head, int value) {
+struct element* push_item(struct element* head, int value) {
     if (head == NULL) {
-        Element* new = malloc(sizeof(Element));
+        struct element* new = malloc(sizeof(struct element));
         new->value = value;
         new->next = NULL;
 
         return new;
     }
 
-    Element* current = head;
+    struct element* current = head;
 
     while (current->next != NULL) {
         current = current->next;
     }
 
-    current->next = malloc(sizeof(Element));
+    current->next = malloc(sizeof(struct element));
     current->next->value = value;
     current->next->next = NULL;
 
     return head;
 }
 
-Element* pop_item(Element* head) {
-    Element* current = head;
+struct element* pop_item(struct element* head) {
+    struct element* current = head;
 
     if (current->next == NULL) {
         free(current);
@@ -49,8 +47,8 @@ Element* pop_item(Element* head) {
 }
 
 
-int top_value(Element* head) {
-    Element* current = head;
+int top_value(struct element* head) {
+    struct element* current = head;
     while (current->next != NULL) {
         current = current->next;
     }
@@ -58,8 +56,8 @@ int top_value(Element* head) {
     return current->value;
 }
 
-void print_stack(Element* head) {
-    Element* current = head;
+void print_stack(struct element* head) {
+    struct element* current = head;
 
     while (current != NULL) {
         printf("%d ", current->value);
@@ -68,10 +66,11 @@ void print_stack(Element* head) {
 }
 
 int main() {
-    Element* stack = NULL;
+    struct element* stack = NULL;
     stack = push_item(stack, 1);
     stack = push_item(stack, 2);
     stack = push_item(stack, 3);
+    stack = push_item(stack, 4);
 
     printf("%d\n", top_value(stack));
 
