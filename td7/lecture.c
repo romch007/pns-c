@@ -35,6 +35,8 @@ char* readline() {
         buffer[size++] = (char) c;
     }
 
+    buffer[size] = '\0';
+
     return buffer;
 }
 

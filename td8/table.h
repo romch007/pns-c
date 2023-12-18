@@ -8,7 +8,7 @@ typedef void (*t_fonction)(char* elt, int nb);
 
 /* Type encapsulé pour la table: une table est un pointeur vers une
  * structure C dont on ne connaît pas le détail */
-typedef void* Table;
+typedef struct table* Table;
 
 //
 // Fonctions elementaires de manipulation de la table
